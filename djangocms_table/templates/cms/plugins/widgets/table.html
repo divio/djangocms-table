@@ -1,0 +1,80 @@
+<div id="table"></div>
+<script type="text/javascript">
+//<![CDATA]
+
+	(function($) {
+	
+	$(document).ready(function () {
+		console.log('ready')
+		{% if data %}var data = {{ data|safe }};{% endif %}
+	   	var headerRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+	  		Handsontable.TextCell.renderer.apply(this, arguments);
+	  		$(td).css({
+	    		'background':'#ccc',
+	    		'font-weight':'bold'
+	  		});
+		};
+		
+		var normalRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+	  		Handsontable.TextCell.renderer.apply(this, arguments);
+	  		$(td).css({
+	    		'background':'white',
+	    		'font-weight':'normal'
+	  		});
+		};
+		var top=0;
+		var left=0;
+		var bottom=0;
+		var container = $("#table")
+		top = $("#id_headers_top").val();
+		left = $("#id_headers_left").val();
+		bottom = $("#id_headers_bottom").val();
+		$("#id_headers_top").change(function(){
+			top = $(this).val();
+			container.data('handsontable').render()
+		})
+		$("#id_headers_bottom").change(function(){
+			bottom = $(this).val();
+			container.data('handsontable').render()
+		})
+		$("#id_headers_left").change(function(){
+			left = $(this).val();
+			container.data('handsontable').render()
+		})
+
+	  	container.handsontable({
+		    {% if data %}data: data,{% endif %}
+		    startRows: 5,
+	    	startCols: 5,
+	        rowHeaders: true,
+	    	colHeaders: true,
+		    contextMenu:true,
+		    onChange:function(changes, source){
+		    	$("#id_{{ name }}").val(JSON.stringify($(this).data('handsontable').getData()))
+		    },
+		    cells: function (row, col, prop) {
+		    	console.log(container.data('handsontable').rowCount)
+		    	console.log(row+bottom)
+		    	if(row < Number(top)){
+		    		return {type: {renderer: headerRenderer}};
+		    	}
+    			if (col < Number(left)) {
+      				return {type: {renderer: headerRenderer}};
+    			}
+    			if(row + Number(bottom) >= container.data('handsontable').rowCount){
+    				return {type: {renderer: headerRenderer}};
+    			}
+    			return {type: {renderer: normalRenderer}};
+  			}
+		});  
+		
+		console.log($(container).data('handsontable'))
+	});	 
+})(jQuery); 
+
+
+//]]>
+</script>
+<style type="text/css">
+	#id_{{ name }} { display:none}
+</style>

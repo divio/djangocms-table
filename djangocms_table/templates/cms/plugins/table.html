@@ -1,0 +1,12 @@
+<h2>{{ instance.name }}</h2>
+
+<table>{% for row in data %}
+	<tr>{% for cell in row %}
+		{% if forloop.parentloop.counter <= instance.headers_top or forloop.counter <= instance.headers_left or forloop.parentloop.revcounter <= instance.headers_bottom %}
+			<th>{%if cell %}{{ cell }}{% endif %}</th>
+		{% else %}
+			<td>{% if cell %}{{ cell }}{% endif %}</td>
+		{% endif %}
+		{% endfor %}
+	</tr>{% endfor %}
+</table>

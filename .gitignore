@@ -6,3 +6,5 @@
 .settings
 build
 env*
+djangocms_table.egg-info
+dist

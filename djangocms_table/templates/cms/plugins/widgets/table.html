@@ -5,7 +5,6 @@
 	(function($) {
 	
 	$(document).ready(function () {
-		console.log('ready')
 		{% if data %}var data = {{ data|safe }};{% endif %}
 	   	var headerRenderer = function (instance, td, row, col, prop, value, cellProperties) {
 	  		Handsontable.TextCell.renderer.apply(this, arguments);
@@ -53,8 +52,6 @@
 		    	$("#id_{{ name }}").val(JSON.stringify($(this).data('handsontable').getData()))
 		    },
 		    cells: function (row, col, prop) {
-		    	console.log(container.data('handsontable').rowCount)
-		    	console.log(row+bottom)
 		    	if(row < Number(top)){
 		    		return {type: {renderer: headerRenderer}};
 		    	}
@@ -67,8 +64,6 @@
     			return {type: {renderer: normalRenderer}};
   			}
 		});  
-		
-		console.log($(container).data('handsontable'))
 	});	 
 })(jQuery); 
 

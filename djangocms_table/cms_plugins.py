@@ -5,6 +5,8 @@ from cms.plugin_base import CMSPluginBase
 from models import Table
 from djangocms_table.forms import TableForm
 from django.utils import simplejson
+from djangocms_table.utils import static_url
+from django.http import HttpResponseRedirect
 
 class TablePlugin(CMSPluginBase):
     model = Table
@@ -22,7 +24,7 @@ class TablePlugin(CMSPluginBase):
             'fields': (('headers_top', 'headers_left', 'headers_bottom'),)
         }),
         (None, {
-            'fields': ('table_data',)
+            'fields': ('table_data', 'csv_upload')
         })
     )
 
@@ -38,38 +40,13 @@ class TablePlugin(CMSPluginBase):
         })
         return context
 
-#    def get_form(self, request, obj=None, **kwargs):
-#        Form = super(LinkPlugin, self).get_form(request, obj, **kwargs)
-#
-#        # this is bit tricky, since i don't wont override add_view and 
-#        # change_view 
-#        class FakeForm(object):
-#            def __init__(self, Form, site):
-#                self.Form = Form
-#                self.site = site
-#
-#                # base fields are required to be in this fake class, this may
-#                # do some troubles, with new versions of django, if there will
-#                # be something more required
-#                self.base_fields = Form.base_fields
-#
-#            def __call__(self, *args, **kwargs):
-#                # instanciate the form on call
-#                form = self.Form(*args, **kwargs)
-#                # tell form we are on this site
-#                form.for_site(self.site)
-#                return form
-#        # TODO: Make sure this works
-#        if self.cms_plugin_instance.page and self.cms_plugin_instance.page.site:
-#            site = self.cms_plugin_instance.page.site
-#        elif self.page and self.page.site:
-#            site = self.page.site
-#        else:
-#            # this might NOT give the result you expect
-#            site = Site.objects.get_current()
-#        return FakeForm(Form, site)
-
     def icon_src(self, instance):
-        return settings.STATIC_URL + u"cms/images/plugins/link.png"
+        return static_url("img/table.png")
+
+    def response_change(self, request, obj):
+        response = super(TablePlugin, self).response_change(request, obj)
+        if 'csv_upload' in request.FILES.keys():
+            self.object_successfully_changed = False
+        return response
 
 plugin_pool.register_plugin(TablePlugin)

@@ -26,6 +26,7 @@
 		var top = $("#id_headers_top").val();
 		var left = $("#id_headers_left").val();
 		var bottom = $("#id_headers_bottom").val();
+		var style = $("#styleclass").val()
 		
 		$("#id_headers_top").change(function(){
 			top = $(this).val();
@@ -42,6 +43,11 @@
 			rowCount = container.data('handsontable').rowCount
 			container.data('handsontable').render()
 		})
+		
+		$("#styleclass").change(function(){
+			style = $(this).val();
+			container.data('handsontable').render()
+		})
 
 	  	container.handsontable({
 		    {% if data %}data: data,{% endif %}
@@ -50,6 +56,7 @@
 	        rowHeaders: true,
 	    	colHeaders: true,
 		    contextMenu:true,
+		    style: style,
 		    onChange:function(changes, source){
 		    	$("#id_{{ name }}").val(JSON.stringify($(this).data('handsontable').getData()))
 		    },

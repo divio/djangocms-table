@@ -1,6 +1,10 @@
-<h2>{{ instance.name }} [{{ style }}]</h2>
+{% load sekizai_tags %}
 
-<table class="tbl_{{ style }}">{% for row in data %}
+{% addtoblock "css" %}
+<link rel="stylesheet" type="text/css" href="/static/table/css/tablestyles.css" media="all" />
+{% endaddtoblock "css" %}
+
+<table  class="{{ style }}">{% for row in data %}
 	<tr>{% for cell in row %}
 		{% if forloop.parentloop.counter <= instance.headers_top or forloop.counter <= instance.headers_left or forloop.parentloop.revcounter <= instance.headers_bottom %}
 			<th>{%if cell %}{{ cell }}{% endif %}</th>

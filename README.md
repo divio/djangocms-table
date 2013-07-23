@@ -13,6 +13,9 @@ This plugin requires `django CMS` 2.3 or higher to be properly installed.
 * Add ``'djangocms_table'`` to your ``INSTALLED_APPS`` setting.
 * Run ``manage.py migrate cmsplugin_table``.
 
+It provides a simple styling facility to allow tabular content to be
+represented in multiple ways. The installed styles have not been
+thoroughly tested.
 
 Kudos
 -----

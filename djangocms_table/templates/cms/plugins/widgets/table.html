@@ -44,6 +44,8 @@
 			container.data('handsontable').render()
 		})
 		
+		// Technically the style choice makes no difference to
+		// the in-widget rendering, but that may change ...
 		$("#styleclass").change(function(){
 			style = $(this).val();
 			container.data('handsontable').render()

@@ -5,17 +5,11 @@
 */
 
 
-body
-{
-	line-height: 1.6em;
-}
-
 .hor-minimalist-a
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
 	background: #fff;
-	margin: 45px;
 	width: 480px;
 	border-collapse: collapse;
 	text-align: left;
@@ -44,7 +38,6 @@ body
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
 	background: #fff;
-	margin: 45px;
 	width: 480px;
 	border-collapse: collapse;
 	text-align: left;
@@ -73,7 +66,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -101,7 +93,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -135,7 +126,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: center;
 	border-collapse: collapse;
@@ -166,7 +156,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -193,7 +182,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -238,7 +226,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -273,7 +260,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -303,7 +289,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -337,7 +322,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
@@ -366,7 +350,6 @@ body
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	margin: 45px;
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;

@@ -1,7 +1,7 @@
 {% load sekizai_tags %}
 
 {% addtoblock "css" %}
-<link rel="stylesheet" type="text/css" href="/static/table/css/tablestyles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/table/css/tablestyles.css" media="all" />
 {% endaddtoblock "css" %}
 
 <table  class="{{ style }}">{% for row in data %}

@@ -32,7 +32,7 @@ class TablePlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         if instance and instance.style:
-            render_style = instance.style
+            self.render_style = instance.style
         try:
             data = simplejson.loads(instance.table_data)
         except:
@@ -41,7 +41,7 @@ class TablePlugin(CMSPluginBase):
             'name': instance.name,
             'data': data,
             'instance':instance,
-            'style': render_style,
+            'style': self.render_style,
         })
         return context
 

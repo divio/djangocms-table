@@ -9,11 +9,9 @@ STYLE_DATA = (
     ("box-table-b", "Box Table B", False),
     ("hor-zebra", "Horizontal Zebra", False),
     ("ver-zebra", "Vertical Zebra", True),
-    ("one-column-emphasis", "One Column Emphasis", False),
     ("newspaper-a", "Newspaper A", False),
     ("newspaper-b", "Newspaper B", False),
     ("newspaper-c", "Newspaper C", False),
-    ("gradient-style", "Gradient Style", False),
     ("pattern-style-a", "Pattern Style A", False),
     ("pattern-style-b", "Pattern Style B", False),
     )

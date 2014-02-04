@@ -51,19 +51,20 @@
 	    	colHeaders: true,
 		    contextMenu:true,
 		    onChange:function(changes, source){
-		    	$("#id_{{ name }}").val(JSON.stringify($(this).data('handsontable').getData()))
+		    	$("#id_{{ name }}").val(JSON.stringify(this.getData()))
 		    },
 		    cells: function (row, col, prop) {
-		    	if(row < Number(top)){
-		    		return {type: {renderer: headerRenderer}};
+		       	if(row < Number(top)){
+		    		this.renderer = headerRenderer;
 		    	}
     			if (col < Number(left)) {
-      				return {type: {renderer: headerRenderer}};
+		  		this.renderer = headerRenderer;
     			}
     			if(row + Number(bottom) >= rowCount){
-    				return {type: {renderer: headerRenderer}};
+    				this.renderer = headerRenderer;
     			}
-    			return {type: {renderer: normalRenderer}};
+				
+    				this.renderer = this.normalRenderer;
   			}
 		});  
 		

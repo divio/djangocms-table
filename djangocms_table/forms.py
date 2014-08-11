@@ -5,7 +5,7 @@ from djangocms_table.widgets import TableWidget
 from djangocms_table.models import Table
 from django.utils.translation import ugettext_lazy as _
 import csv
-from django.utils import simplejson
+import json
 
 
 class TableForm(ModelForm):
@@ -18,7 +18,7 @@ class TableForm(ModelForm):
             data = []
             for row in csv_reader:
                 data.append(row)
-            self.cleaned_data['table_data'] = simplejson.dumps(data)
+            self.cleaned_data['table_data'] = json.dumps(data)
             self.csv_uploaded = True
 
     class Meta:

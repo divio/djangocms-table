@@ -1,10 +1,10 @@
+import json
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 from models import Table
 from djangocms_table.forms import TableForm
-from django.utils import simplejson
 from djangocms_table.utils import static_url
 from django.http import HttpResponseRedirect
 
@@ -30,7 +30,7 @@ class TablePlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         try:
-            data = simplejson.loads(instance.table_data)
+            data = json.loads(instance.table_data)
         except:
             data = "error"
         context.update({

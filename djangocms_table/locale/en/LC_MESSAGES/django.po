@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-29 18:16+0100\n"
+"POT-Creation-Date: 2014-08-14 15:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: cms_plugins.py:12
+#: cms_plugins.py:14
 msgid "Table"
 msgstr ""
 
-#: cms_plugins.py:20
+#: cms_plugins.py:22
 msgid "Headers"
+msgstr ""
+
+#: forms.py:13
+msgid "upload .csv file"
+msgstr ""
+
+#: forms.py:13
+msgid "upload a .csv file to fill the table up."
 msgstr ""
 
 #: models.py:10

@@ -3,53 +3,54 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Patrick Lauber <patrick.lauber@divio.ch>, 2014
+# angularcircle, 2013
+# ksiedlarek <katarzyna@siedlarek.pl>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: django-cms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-14 15:03+0200\n"
-"PO-Revision-Date: 2014-09-05 14:12+0000\n"
-"Last-Translator: Patrick Lauber <patrick.lauber@divio.ch>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/django-cms/language/de/)\n"
+"PO-Revision-Date: 2014-10-07 12:31+0000\n"
+"Last-Translator: ksiedlarek <katarzyna@siedlarek.pl>\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/django-cms/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: cms_plugins.py:14
 msgid "Table"
-msgstr "Tabelle"
+msgstr "Tabela"
 
 #: cms_plugins.py:22
 msgid "Headers"
-msgstr "Headers"
+msgstr "Nagłówki"
 
 #: forms.py:13
 msgid "upload .csv file"
-msgstr ".csv Datei raufladen"
+msgstr "prześlij plik .csv"
 
 #: forms.py:13
 msgid "upload a .csv file to fill the table up."
-msgstr ".csv Datei raufladen um die Tabelle zu befüllen."
+msgstr "prześlij plik .csv aby wypełnić tabelę"
 
 #: models.py:10
 msgid "name"
-msgstr "Name"
+msgstr "nazwa"
 
 #: models.py:12
 msgid "top"
-msgstr "Oben"
+msgstr "na górze"
 
 #: models.py:13
 msgid "left"
-msgstr "Links"
+msgstr "z lewej"
 
 #: models.py:14
 msgid "bottom"
-msgstr "Unten"
+msgstr "na dole"
 
 #: models.py:15
 msgid "table data"
-msgstr "Tabellen Daten"
+msgstr "dane tabeli"

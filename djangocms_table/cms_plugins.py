@@ -7,6 +7,7 @@ from models import Table
 from djangocms_table.forms import TableForm
 from djangocms_table.utils import static_url
 from django.http import HttpResponseRedirect
+from .models import STYLE_CHOICES
 
 class TablePlugin(CMSPluginBase):
     model = Table
@@ -14,6 +15,7 @@ class TablePlugin(CMSPluginBase):
     name = _("Table")
     render_template = "cms/plugins/table.html"
     text_enabled = True
+    render_style = STYLE_CHOICES[0][0]
 
     fieldsets = (
         (None, {
@@ -21,7 +23,7 @@ class TablePlugin(CMSPluginBase):
         }),
         (_('Headers'), {
 
-            'fields': (('headers_top', 'headers_left', 'headers_bottom'),)
+            'fields': (('headers_top', 'headers_left', 'headers_bottom', 'style'),)
         }),
         (None, {
             'fields': ('table_data', 'csv_upload')
@@ -29,6 +31,8 @@ class TablePlugin(CMSPluginBase):
     )
 
     def render(self, context, instance, placeholder):
+        if instance and instance.style:
+            self.render_style = instance.style
         try:
             data = json.loads(instance.table_data)
         except:
@@ -37,6 +41,7 @@ class TablePlugin(CMSPluginBase):
             'name': instance.name,
             'data': data,
             'instance':instance,
+            'style': self.render_style,
         })
         return context
 

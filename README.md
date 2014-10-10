@@ -18,6 +18,9 @@ Do not install version 1.1.x if you are are running `django CMS` 2.3 or 2.4
 * Add ``'djangocms_table'`` to your ``INSTALLED_APPS`` setting.
 * Run ``manage.py migrate cmsplugin_table``.
 
+It provides a simple styling facility to allow tabular content to be
+represented in multiple ways. The installed styles have not been
+thoroughly tested.
 
 Kudos
 -----

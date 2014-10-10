@@ -8,3 +8,4 @@ build
 env*
 djangocms_table.egg-info
 dist
+.DS_Store
